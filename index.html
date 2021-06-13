@@ -24,17 +24,17 @@
                         <path d="M38.842 7.45474L52.4654 3.80436C52.7322 3.73289 53.0063 3.89118 53.0778 4.15792L53.719 6.55099C53.7905 6.81772 53.6322 7.09189 53.3655 7.16336L43.5864 9.78366" stroke="black" stroke-width="2" stroke-linecap="round"/>
                     </svg>                    
                 </a>
-                <svg class="burger" width="14" height="10" viewBox="0 0 14 10" fill="none">
-                    <path d="M0.321533 0.610229H13.3215" stroke="black"/>
-                    <path d="M0.321533 4.93762H13.3215" stroke="black"/>
-                    <path d="M0.321533 9.26495H13.3215" stroke="black"/>
-                </svg> 
                 <ul class="nav-links">
                     <li><a href="#nastenka">Nástěnka</a></li>
                     <li><a href="#projekty">Projekty</a></li>
                     <li><a href="#nost">NOST</a></li>
                     <li id="join-btn"><a href="#pridejse">Chci se zapojit</a></li>
                 </ul>
+                <svg class="burger" width="14" height="10" viewBox="0 0 14 10" fill="none">
+                    <path d="M0.321533 0.610229H13.3215" stroke="black"/>
+                    <path d="M0.321533 4.93762H13.3215" stroke="black"/>
+                    <path d="M0.321533 9.26495H13.3215" stroke="black"/>
+                </svg> 
             </div>
         </nav>
     </header>
@@ -156,6 +156,17 @@
             else if(window.scrollY >= section_2.offsetTop && nav_logo.classList.contains("blue")) {
                 nav_logo.classList.remove("blue")
                 nav_logo.classList.add("red")
+            }
+        })
+
+        const body = document.body
+
+        document.body.addEventListener("click", (e) => {
+            if(event.target.classList.contains("burger") && !body.classList.contains("menu-open")) {
+                body.classList.add("menu-open")
+            }
+            else if (event.target.classList.contains("burger") && body.classList.contains("menu-open")) {
+                body.classList.remove("menu-open")
             }
         })
     </script>
