@@ -45,8 +45,8 @@ html {
 .more-link > span::before {
     content: "";
     position: absolute;
-    bottom: -.7em;
-    width: 100%;
+    bottom: -20%;
+    width: 80%;
     border-bottom: 2px solid black;
     transition: .2s ease;
 }
@@ -59,7 +59,7 @@ html {
 }
 
 .more-link:hover > span::before{
-    bottom: -.2em;
+    width: 100%;
 }
 
 .more-link:hover > .arrow {
@@ -116,6 +116,24 @@ nav.scroll{
     font-weight: bold;
 }
 
+.nav-links > li > a {
+    position: relative;
+}
+
+.nav-links > li > a::after {
+    position: absolute;
+    content: "";
+    width: 0%; height: 1px;
+    transition: .2s ease-out;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid black;
+}
+
+.nav-links > li > a:hover::after {
+    width: 100%;
+}
+
 #join-btn {
     white-space: nowrap;
     transition: .2s ease;
@@ -135,6 +153,7 @@ nav.scroll{
     transition: .2s ease;
     display: flex;
     justify-content: center;
+    pointer-events: none;
 }
 
 #join-btn.scroll {
@@ -143,6 +162,7 @@ nav.scroll{
 
 #join-btn.scroll > a {
     width: 10em;
+    pointer-events: all;
 }
 
 main {
@@ -153,8 +173,9 @@ main {
 }
 
 section {
-    padding-top: 4em;
-    padding-bottom: 3em;
+    padding: 4em 0;
+    display: inline-block;
+    width: 100%;
 }
 
 h1 {
@@ -327,7 +348,7 @@ h1 > span {
 }
 
 .projects-showcase {
-    margin: 4em 0;
+    padding: 4em 0;
     --auto-grid-min-size: 18em;
     width: 100%;
     list-style: none;
