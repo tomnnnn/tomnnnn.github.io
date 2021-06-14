@@ -53,7 +53,7 @@ html {
 
 .more-link > .arrow {
     transition: .2s ease;
-    margin-left: .8em;
+    margin-left: .4em;
     width: 2em;
     vertical-align: middle;
 }
@@ -378,6 +378,40 @@ h1 > span {
     grid-column: 2/4;
 }
 
+.nost {
+    display: flex;
+    height: 80vh;
+}
+
+.nost > .desc {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.nost > .desc > h2 {
+    flex: .5;
+    font-size: 3em;
+    margin-bottom: 0;
+}
+
+.nost > .desc > span {
+    flex: 0;
+    font-weight: bold;
+}
+
+.nost > .desc > p {
+    flex: 3;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2em;
+}
+
+.img-nost {
+    border-radius: 1em;
+    margin-right: 5em;
+}
+
 @media screen and (max-width: 850px) {
     body {
         font-size: .9em;
@@ -541,4 +575,16 @@ h1 > span {
         grid-column: 1;
     }
     
+    .img-nost {
+        display: none;
+    }
+
+    .nost > .desc {
+        display: block;
+        height: auto;
+    }
+
+    .nost > .desc > p {
+        margin-bottom: 3em;
+    }
 }
