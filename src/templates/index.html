@@ -27,15 +27,16 @@
                     <li><a href="#nastenka">Nástěnka</a></li>
                     <li><a href="#projekty">Projekty</a></li>
                     <li><a href="#nost">NOST</a></li>
-                    <li id="join-btn"><a class="btn primary" href="#pridejse">
-                        Chci se zapojit
-                        <svg class="arrow" width="43" height="24" viewBox="0 0 43 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.0144 11.7212H40.5869M40.5869 11.7212L30.5096 1.64392M40.5869 11.7212L30.5096 21.7986" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-
-                    </a></li>
+                    <li id="join-btn">
+                        <a class="btn primary" href="#pridejse">
+                            Chci se zapojit
+                            <svg class="arrow" width="43" height="24" viewBox="0 0 43 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.0144 11.7212H40.5869M40.5869 11.7212L30.5096 1.64392M40.5869 11.7212L30.5096 21.7986" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </li>
                 </ul>
-                <svg class="burger" width="14" height="10" viewBox="0 0 14 10" fill="none">
+                <svg class="burger mobile" width="14" height="10" viewBox="0 0 14 10" fill="none">
                     <path d="M0.321533 0.610229H13.3215" stroke="black"/>
                     <path d="M0.321533 4.93762H13.3215" stroke="black"/>
                     <path d="M0.321533 9.26495H13.3215" stroke="black"/>
@@ -55,11 +56,17 @@
                     Chci se zapojit
                     <svg class="arrow" width="43" height="24" viewBox="0 0 43 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.0144 11.7212H40.5869M40.5869 11.7212L30.5096 1.64392M40.5869 11.7212L30.5096 21.7986" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg></a>
-                <a class="btn" href="#projekty">Naše projekty</a>
+                    </svg>
+                </a>
+                <a class="btn" href="#projekty">
+                    Naše projekty
+                    <svg class="arrow" width="43" height="24" viewBox="0 0 43 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.0144 11.7212H40.5869M40.5869 11.7212L30.5096 1.64392M40.5869 11.7212L30.5096 21.7986" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>
 
-            <div class="onas">
+            <div class="onas pc">
                 <img class="il-about" src="../media/il-about.svg" alt="">                  
 
                 <p>Chceme naše studenty a studentky více zapojit do života na škole a vytvářet komunitu, kde se nikdo nemusí bát projevit svůj názor či realizovat vlastní nápady.</p>
@@ -78,7 +85,7 @@
                     <div class="desc">
                         <span class="tag">Nejnovější příspevěk</span>
                         <h3>Muzejní noc</h3>
-                        <p>Nemáš co dělat o prázdninách? Přijď nám pomoct s historickou módní přehlídkou pro Noc muzeí!</p>
+                        <p class="pc">Nemáš co dělat o prázdninách? Přijď nám pomoct s historickou módní přehlídkou pro Noc muzeí!</p>
                         <p class="mobile">Přečíst si</p>
                     </div>
                 </a>
@@ -117,27 +124,46 @@
                     <img class="arrow" src="../media/arrow-right.svg" alt="">
                 </a>
             </div>
-            <img class="img-nost" src="../media/nost.svg" alt="">
+            <img class="img-nost pc" src="../media/nost.svg" alt="">
         </section>
 
         <section class="pridejse" id="pridejse">
-            <h2>Zapoj se i ty!</h2>
-            <div class="wrapper">
-                <p>
-                    Máš nápad na novou aktivitu nebo se chceš zapojit do stávajícího projektu? Napiš nám, nebo se připoj do našeho Teamu přes odkazy níže!
-                    <br>
-                    <br>
-                    Studentské centrum je otevřeno všem studentům našeho gymnázia.
-                </p>
-    
-                <form action="#" class="contact-form">
-                    <input class="input" type="text" name="name" placeholder="Jméno">
-                    <input class="input" type="text" name="email" placeholder="E-mail">
-                    <textarea rows="15" class="input" name="message" placeholder="Zpráva"></textarea>
-                    <button class="btn" type="submit">Odeslat</button>
-                </form>
+            <div class="flexbox">
+                <div class="text-container">
+                    <h2>Zapoj se i ty!</h2>
+                    <p>
+                        Máš nápad na novou aktivitu nebo se chceš zapojit do stávajícího projektu? Připoj se do našeho Teams, nebo nám napiš přes tento formulář!
+                        <br>
+                        <br>
+                        Studentské centrum je otevřeno všem studentům našeho gymnázia.
+                    </p>
+
+                    <a class="arrow-link" href="#">
+                        <span>Připojit se na Teams</span>
+                        <img class="arrow" src="../media/arrow-right.svg" alt="">
+                    </a>
+                </div>
+
+                <div class="form-container">
+                    <form action="#" class="contact-form">
+                        <h3>Napiš nám!</h3>
+                        <input class="input" type="text" name="name" placeholder="Jméno">
+                        <input class="input" type="text" name="email" placeholder="E-mail">
+                        <textarea rows="15" class="input" name="message" placeholder="Zpráva"></textarea>
+                        <br><button class="btn" type="submit">Odeslat 
+                            <svg class="arrow" width="43" height="24" viewBox="0 0 43 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.0144 11.7212H40.5869M40.5869 11.7212L30.5096 1.64392M40.5869 11.7212L30.5096 21.7986" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg></button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
+
+    <footer>
+        <a class="signature" href="http://www.gfpvm.cz">
+            Made with &hearts; by GFPVM students
+        </a>
+    </footer>
 </body>
 </html>

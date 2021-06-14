@@ -12,7 +12,6 @@
         border-radius: 1em;
         margin-right: 1.5em;
         transition: .2s ease;
-        overflow: hidden;
 
         &:hover {
             transform: scale(1.05);
@@ -24,7 +23,6 @@
 
         .thumbnail {
             width: 16em;
-            padding: 1em;
             position: relative;
             
             &::after {
@@ -98,4 +96,61 @@
             justify-content: center;
         }
     }
+}
+
+@media screen and (max-width: 648px) {
+    .showcase {
+        flex-direction: column;
+
+        .spotlight {
+            margin: 0;
+
+            .desc {
+                padding-left: 1.5em;
+                h3 {
+                    flex: 3;
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .tag {
+                    margin: 0;
+                    font-weight: 500;
+                }
+
+                .p {
+                    margin-top: auto;
+                }
+            }
+
+            .thumbnail {
+                width: 30%;
+                height: 100%;
+                border-radius: 0;
+
+                .container {
+                    padding: 0;
+                }
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        .showmore {
+            margin-top: 3em;
+            width: 100%;
+            
+            a {
+                justify-content: flex-end;
+            }
+    
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    
 }
