@@ -49,6 +49,10 @@ nav {
     transition: .2s ease;
     background: white;
     border-bottom: 1.5px solid #00000000;
+    
+    a {
+        font-family: "Raleway";
+    } 
 
     &.scroll {
         border-bottom: 1.5px solid #000000;
@@ -65,7 +69,7 @@ nav {
         align-items: center;
         justify-content: center;
         padding: .5em 2em;
-        max-width: calc(1050px + 4em);
+        max-width: calc(1000px + 4em);
         margin-left: auto;
         margin-right: auto;
 
@@ -97,12 +101,31 @@ nav {
             li:hover::after {
                 width: 100%;  
             }
+
+            #join-btn {
+                width: 0;
+                margin: 0;
+                opacity: 0;
+                transition: opacity .2s ease, transform .2s ease, width .2s ease;
+                pointer-events: none;
+                display: flex;
+                justify-content: flex-end;
+                transform: translateY(-25%);
+
+                &.scroll {
+                    transform: translateY(0);
+                    width: 10em;
+                    margin-left: 2em;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
         }
     }
 }
 
 main {
-    max-width: 1050px;
+    max-width: calc(1000px + 3em);
     margin-left: auto;
     margin-right: auto;
     padding: 2em 1.5em 0 1.5em;
@@ -305,46 +328,85 @@ h2 {
         height: auto;
         margin-left: auto;
         z-index: 11;
+        box-sizing: content-box;
+        padding: 1em;
     }
 
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 80%;
-        background: white;
-        z-index: 10;
-        transition: .2s ease;
-        transform: translateX(100%);
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 2em;
-        margin: 0;
-
-        li {
-            a {
-                font-size: 2em;
+    nav {
+        .navbar {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 80%;
+                background: white;
+                z-index: 10;
+                transition: .2s ease;
+                transform: translateX(100%);
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                padding: 2em;
+                margin: 0;
+        
+                li {
+                    margin-bottom: 1em;
+        
+                    a {
+                        font-size: 1.5em;
+                    }
+                }
             }
         }
-    }
 
-    body.menu-open {
-        position: relative;
+        .btn.primary {
+            background: none;
+            padding: 0;
+            color: black;
+            border: none;
+        }
 
         &::after {
             position: absolute;
             content: "";
             top: 0;
             left: 0;
-            width: 100%; height: 100%;
+            width: 100%; height: 100vh;
             background: #000000a3;
+            transition: .4s ease-out;
+            pointer-events: none;
+            opacity: 0;
+        }
+    }
+
+    body.menu-open {
+        position: relative;
+
+        nav::after {
+            pointer-events: all;
+            opacity: 1;
         }
 
         .nav-links {
             transform: translateX(0);
+
+            li:not(:last-child) {
+                margin-right: 0;
+            }
+
+            #join-btn {
+                transition: none;
+                width: auto;
+                opacity: 1;
+                pointer-events: all;
+                
+                &.scroll {
+                    width: auto;
+                    margin-left: 0;
+                }
+            }
         }
     }
 

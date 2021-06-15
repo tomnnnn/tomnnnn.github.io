@@ -20,38 +20,29 @@ window.addEventListener("scroll", () => {
         nav.classList.add("scroll")
     }
     
-    if (window.scrollY < 35 && join_btn.classList.contains("scroll")) {
+    if (window.scrollY < section_2.offsetTop-window.innerHeight/2 && join_btn.classList.contains("scroll")) {
         join_btn.classList.remove("scroll")
     }
     
-    else if(window.scrollY >= 35 && !join_btn.classList.contains("scroll")) {
+    else if(window.scrollY >= section_2.offsetTop-window.innerHeight/2 && !join_btn.classList.contains("scroll")) {
         join_btn.classList.add("scroll")
-    }
-
-    if(window.scrollY <= section_1.offsetTop && !nav_logo.classList.contains("black")) {
-        nav_logo.classList.remove("blue")
-        nav_logo.classList.add("black")
-    }
-
-    else if(window.scrollY >= section_1.offsetTop && window.scrollY < section_2.offsetTop && !nav_logo.classList.contains("blue")) {
-        nav_logo.classList.remove("black")
-        nav_logo.classList.remove("red")
-        nav_logo.classList.add("blue")
-    }
-
-    else if(window.scrollY >= section_2.offsetTop && nav_logo.classList.contains("blue")) {
-        nav_logo.classList.remove("blue")
-        nav_logo.classList.add("red")
     }
 })
 
+const burger = document.getElementsByClassName("burger")[0]
 const body = document.body
 
-document.body.addEventListener("click", (e) => {
-    if(e.target.classList.contains("burger") && !body.classList.contains("menu-open")) {
+burger.addEventListener("click", (e) => {
+    if(!body.classList.contains("menu-open")) {
         body.classList.add("menu-open")
     }
-    else if (e.target.classList.contains("burger") && body.classList.contains("menu-open")) {
+    else {
+        body.classList.remove("menu-open")
+    }
+})
+
+body.addEventListener("click", (e)=> {
+    if(!e.target.classList.contains("nav-links") && !e.target.classList.contains("burger")  && body.classList.contains("menu-open")) {
         body.classList.remove("menu-open")
     }
 })
