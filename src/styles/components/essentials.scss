@@ -16,6 +16,12 @@ button {
     transition: .2s ease;
     white-space: nowrap;
 
+    &:hover {
+        .arrow {
+            width: 1.2em;
+        }
+    }
+
     .arrow {
         width: 0;
         vertical-align: middle;
@@ -23,12 +29,6 @@ button {
 
         path {
             stroke: black;
-        }
-    }
-
-    &:hover {
-        .arrow {
-            width: 1.2em;
         }
     }
     
@@ -58,7 +58,7 @@ button {
         content: "";
         position: absolute;
         bottom: -30%;
-        width: 80%;
+        width: 60%;
         border-bottom: 2px solid black;
         transition: .2s ease;
     }
@@ -78,10 +78,6 @@ button {
         span::before {
             width: 100%;
         }
-
-        .arrow {
-            transform: translateX(.5em);
-        }
     }
 }
 
@@ -89,4 +85,12 @@ button {
     width: 25em;
     margin-bottom: 1em;
     padding: 1em 1.5em;
+    border-radius: 1.5em;
+    border: 1px solid black;
+    font-family: "Raleway";
+
+    &:focus {
+        outline: none;
+        border: 2px solid black;
+    }
 }
